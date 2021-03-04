@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent implements OnInit {
-  public user: User;
+  public user?: User;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
