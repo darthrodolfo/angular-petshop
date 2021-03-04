@@ -20,12 +20,13 @@ export class Security {
     localStorage.setItem('petshoptoken', token);
   }
 
-  public static getUser(): User | null {
+  public static getUser(): User {
     const data = localStorage.getItem('petshopuser');
     if(data) {
       return JSON.parse(atob(data));
     } else {
-      return null;
+      //TODO: Learn how to return a null value and how to receive it on the other side.
+      return new User('','','','');
     }
   }
 
