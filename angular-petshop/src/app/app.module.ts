@@ -15,6 +15,7 @@ import { FramePageComponent } from './pages/master/frame-page/frame-page.compone
 import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PetsPageComponent } from './pages/account/pets-page/pets-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignupPageComponent,
     FramePageComponent,
     ResetPasswordPageComponent,
+    PetsPageComponent,
   ],
   imports: [
     BrowserModule,

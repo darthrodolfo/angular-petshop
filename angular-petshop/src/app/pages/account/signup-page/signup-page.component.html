@@ -4,7 +4,7 @@
       <span class="uk-icon uk-margin-smal-right" uk-icon="icon: logo-color-dark; ratio: 0.7"></span>
     </p>
 
-    <app-loading-spinner></app-loading-spinner>
+    <app-loading-spinner *ngIf="busy"></app-loading-spinner>
 
     <form [formGroup]="form" *ngIf="!busy">
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
