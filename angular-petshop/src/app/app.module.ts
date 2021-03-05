@@ -16,6 +16,7 @@ import { ResetPasswordPageComponent } from './pages/account/reset-password-page/
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetsPageComponent } from './pages/account/pets-page/pets-page.component';
+import { ProductCardComponent } from './components/store/product-card/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PetsPageComponent } from './pages/account/pets-page/pets-page.component
     FramePageComponent,
     ResetPasswordPageComponent,
     PetsPageComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
