@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import { DataService } from 'src/app/services/data.service';
 import { Security } from 'src/app/utils/security.util';
+import { CustomValidator } from 'src/app/validators/custom.validator';
 
 @Component({
   selector: 'app-login-page',
@@ -26,6 +27,7 @@ export class LoginPageComponent implements OnInit {
           Validators.minLength(14),
           Validators.maxLength(14),
           Validators.required,
+          CustomValidator.isCpf(),
         ]),
       ],
       password: [

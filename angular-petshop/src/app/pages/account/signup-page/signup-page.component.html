@@ -11,20 +11,20 @@
         <h3 class="uk-card-title">Cadastre-se</h3>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="name" type="text" placeholder="Nome"
-            ngClass="{'uk-form-danger': (!form.controls.name.valid && !form.controls.name.pristine) }">
+            [ngClass]="{'uk-form-danger': (!form.controls.name.valid && !form.controls.name.pristine) }">
         </div>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="email" type="email" placeholder="E-mail"
-            ngClass="{'uk-form-danger': (!form.controls.email.valid && !form.controls.email.pristine) }">
+            [ngClass]="{'uk-form-danger': (!form.controls.email.valid && !form.controls.email.pristine) }">
         </div>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="document" type="text" placeholder="CPF"
             mask="###.###.###-##"
-            ngClass="{'uk-form-danger': (!form.controls.document.valid && !form.controls.document.pristine) }">
+            [ngClass]="{'uk-form-danger': (!form.controls.document.valid && !form.controls.document.pristine) }">
         </div>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="password" type="password" placeholder="Senha"
-            ngClass="{'uk-form-danger': (!form.controls.password.valid && !form.controls.password.pristine) }">
+            [ngClass]="{'uk-form-danger': (!form.controls.password.valid && !form.controls.password.pristine) }">
         </div>
         <div class="uk-margin uk-text-right">
           <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
@@ -33,7 +33,7 @@
     </form>
 
     <p class="uk-text-center" *ngIf="!busy">
-      <a routerLink="['/login']" class="uk-button uk-button-link">Cancelar</a>
+      <a [routerLink]="['/login']" class="uk-button uk-button-link">Cancelar</a>
     </p>
 
   </div>

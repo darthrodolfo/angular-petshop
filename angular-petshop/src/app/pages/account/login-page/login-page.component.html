@@ -12,22 +12,22 @@
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formControlName="username" placeholder="CPF" type="text"
             mask="###.###.###-###"
-            ngClass="{'uk-form-danger': (form.controls.username.valid == false & form.controls.username.prestine == false)}">
+            [ngClass]="{'uk-form-danger': (form.controls.username.valid == false && form.controls.username.pristine == false)}">
         </div>
         <div class="uk-margin">
           <input class="uk-input uk-form-large" formcontrolName="password" placeholder="password" type="password">
         </div>
-        <div class="uk-margin uk-text-background">
-          <button class="uk-margin uk-text-right" [disabled]="form.invalid" (click)="submit()">Sign in</button>
+        <div class="uk-margin uk-text-right">
+          <button type="button" class="uk-button uk-button-default" (click)="submit()">Sign in</button>
         </div>
       </div>
     </form>
 
     <p class="uk-text-center" *ngIf="busy == false">
-      <a routerLink="['/signup']"
+      <a [routerLink]="['/signup']"
         class="uk-botton uk-width-1-1 uk-button-large uk-button-primary uk-margin-small-botton">Sign up</a>
       <br>
-      <a routerLink="['/reset-password']" class="uk-botton uk-button-link">I forgot my password</a>
+      <a [routerLink]="['/reset-password']" class="uk-botton uk-button-link">I forgot my password</a>
     </p>
 
   </div>
