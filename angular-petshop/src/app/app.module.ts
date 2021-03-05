@@ -12,6 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
 import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
+import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
+import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,15 +25,17 @@ import { FramePageComponent } from './pages/master/frame-page/frame-page.compone
     ProfilePageComponent,
     SignupPageComponent,
     FramePageComponent,
+    ResetPasswordPageComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [DataService],
+  providers: [DataService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

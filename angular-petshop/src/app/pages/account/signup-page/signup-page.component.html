@@ -6,7 +6,7 @@
 
     <app-loading-spinner></app-loading-spinner>
 
-    <form formGroup="form" *ngIf="!busy">
+    <form [formGroup]="form" *ngIf="!busy">
       <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
         <h3 class="uk-card-title">Cadastre-se</h3>
         <div class="uk-margin">

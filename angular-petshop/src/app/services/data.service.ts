@@ -43,4 +43,10 @@ export class DataService {
       headers: this.composeHeaders(),
     });
   }
+
+  updateProfile(data: any) {
+    return this.http.put(`${this.url}/accounts`, data, {
+      headers: this.composeHeaders(),
+    });
+  }
 }

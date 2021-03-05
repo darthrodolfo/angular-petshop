@@ -6,10 +6,11 @@ import { ToastrService } from 'ngx-toastr';
 import { CustomValidator } from 'src/app/validators/custom.validator';
 
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
+  selector: 'app-reset-password-page',
+  templateUrl: './reset-password-page.component.html',
+  styleUrls: ['./reset-password-page.component.css'],
 })
-export class SignupPageComponent implements OnInit {
+export class ResetPasswordPageComponent implements OnInit {
   public form: FormGroup;
   public busy = false;
 
@@ -20,14 +21,6 @@ export class SignupPageComponent implements OnInit {
     private toastr: ToastrService
   ) {
     this.form = this.formBuilder.group({
-      name: [
-        '',
-        Validators.compose([
-          Validators.minLength(3),
-          Validators.maxLength(80),
-          Validators.required,
-        ]),
-      ],
       document: [
         '',
         Validators.compose([
@@ -37,39 +30,20 @@ export class SignupPageComponent implements OnInit {
           CustomValidator.isCpf(),
         ]),
       ],
-      email: [
-        '',
-        Validators.compose([
-          Validators.minLength(5),
-          Validators.maxLength(120),
-          Validators.required,
-          CustomValidator.EmailValidator,
-        ]),
-      ],
-      password: [
-        '',
-        Validators.compose([
-          Validators.minLength(6),
-          Validators.maxLength(20),
-          Validators.required,
-        ]),
-      ],
     });
   }
-
   ngOnInit() {}
 
   submit() {
     this.busy = true;
-
-    this.dataService.create(this.form.value).subscribe(
+    this.dataService.resetPassword(this.form.value).subscribe(
       (data: any) => {
         this.busy = false;
-        this.toastr.success(data.message, 'Bem-vindo!');
+        this.toastr.success(data.message, 'Senha Restaurada');
         this.router.navigate(['/login']);
       },
-      (error) => {
-        //console.log(error);
+      (err) => {
+        console.log(err);
         this.busy = false;
       }
     );
