@@ -1,14 +1,9 @@
 import { User } from '../models/user.model';
 
-
 export class Security {
-
-  public static set(user: User, token: string) {
-    const data = JSON.stringify(user);
-
-    localStorage.setItem('petshopuser', btoa(data));
-    localStorage.setItem('petshoptoken', token);
-
+  public static setAuthenticatedUser(user: User, token: string) {
+    this.setUser(user);
+    this.setToken(token);
   }
 
   public static setUser(user: User) {
@@ -22,26 +17,25 @@ export class Security {
 
   public static getUser(): User {
     const data = localStorage.getItem('petshopuser');
-    if(data) {
+    if (data) {
       return JSON.parse(atob(data));
     } else {
       //TODO: Learn how to return a null value and how to receive it on the other side.
-      return new User('','','','');
+      return new User('', '', '', '');
     }
   }
 
   public static hasToken(): boolean {
-    if(this.getToken())
-    {
+    if (this.getToken()) {
       return true;
-    }else {
+    } else {
       return false;
     }
   }
 
   public static getToken(): string | null {
     const storagedToken = localStorage.getItem('petshoptoken');
-    if(storagedToken) {
+    if (storagedToken) {
       return storagedToken;
     } else {
       return null;
