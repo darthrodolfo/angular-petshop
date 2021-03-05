@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { LoadingComponent } from './loading/loading.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
