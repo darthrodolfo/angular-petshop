@@ -17,7 +17,9 @@ import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetsPageComponent } from './pages/account/pets-page/pets-page.component';
 import { ProductCardComponent } from './components/store/product-card/product-card/product-card.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
+import { ProductsPageComponent } from './pages/store/products-page/products-page.component';
+import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page.component';
+import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     PetsPageComponent,
     ProductCardComponent,
     CartPageComponent,
+    CheckoutPageComponent,
+    ProductsPageComponent,
   ],
   imports: [
     BrowserModule,
