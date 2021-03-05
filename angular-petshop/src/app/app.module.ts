@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
+import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SignupPageComponent } from './pages/account/signup-page/signup-page.com
     LoadingComponent,
     ProfilePageComponent,
     SignupPageComponent,
+    FramePageComponent,
   ],
   imports: [
     BrowserModule,
