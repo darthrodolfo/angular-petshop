@@ -1,0 +1,6 @@
+<div class="uk-flex-center" uk-grid>
+  <div class="uk-width-1-3@m"></div>
+  <app-loading *ngif="busy"></app-loading>
+
+  <form formGroup="grom" *ngIf="busy == false"></form>
+</div>
