@@ -9,9 +9,9 @@ import { User } from 'src/app/models/user.model';
 })
 export class NavbarComponent implements OnInit {
   public user?: User;
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.user = Security.getUser();
   }
 
@@ -19,5 +19,4 @@ export class NavbarComponent implements OnInit {
     Security.clear();
     this.router.navigate(['/login']);
   }
-
 }
